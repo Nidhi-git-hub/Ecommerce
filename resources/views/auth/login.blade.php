@@ -32,13 +32,28 @@
 </head>
 
 <body class="bg-dark">
-
+@if(session('message'))
+                <p class="alert alert-success">
+                    {{session('message')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </p>
+                @endif
+                @if(session('delete'))
+                <p class="alert alert-danger">
+                    {{session('delete')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </p>
+                @endif
 
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
                 <div class="login-form">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{url('admin')}}">
                         @csrf
                         <div class="form-group">
                             <label>{{ __('E-Mail Address') }}</label>

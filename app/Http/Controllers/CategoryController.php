@@ -61,4 +61,8 @@ class CategoryController extends Controller
             return redirect('/admin/display-category');
         }
     }
+    public function updateStatus(Request $request,$id=null){
+        $data= $request->all(); 
+        Category::where('id',$data['id'])->update(['status'=>$data['status']]);
+    }
 }

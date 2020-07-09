@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('price');
             $table->string('picture');
             $table->tinyInteger('status')->default('1');
+            $table->tinyInteger('featured_products')->default('1');
             $table->timestamps();
         });
     }

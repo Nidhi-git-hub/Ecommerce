@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    #carousel-example-generic {
+    margin: 20px auto;
+    width: 400px;
+}
+
+#carousel-custom {
+    margin: 20px auto;
+    width: 400px;
+}
+#carousel-custom .carousel-indicators {
+    margin: 10px 0 0;
+    overflow: auto;
+    position: static;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+}
+#carousel-custom .carousel-indicators li {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    width: auto;
+}
+#carousel-custom .carousel-indicators li img {
+    display: block;
+    opacity: 0.5;
+}
+#carousel-custom .carousel-indicators li.active img {
+    opacity: 1;
+}
+#carousel-custom .carousel-indicators li:hover img {
+    opacity: 0.75;
+}
+</head>
+<body>
+<div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+        <!-- Wrapper for slides -->
+        <div class='carousel-inner'>
+            <div class='carousel-item active'>
+                <img src='http://placehold.it/400x200&text=slide1' alt='' />
+            </div>
+            <div class='carousel-item'>
+                <img src='http://placehold.it/400x200&text=slide2' alt='' />
+            </div>
+            <div class='carousel-item'>
+                <img src='http://placehold.it/400x200&text=slide3' alt='' />
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+            <span class='glyphicon glyphicon-chevron-left'></span>
+        </a>
+        <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+            <span class='glyphicon glyphicon-chevron-right'></span>
+        </a>
+
+
+    <!-- Indicators -->
+    <ol class='carousel-indicators'>
+        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='http://placehold.it/100x50&text=slide1' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/100x50&text=slide2' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+
+    </ol>
+</div>
+</body>
+</html>

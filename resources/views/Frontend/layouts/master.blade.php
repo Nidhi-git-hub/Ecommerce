@@ -37,7 +37,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script>
-<!-- start-smoth-scrolling -->
 </head>
 	
 <body>
@@ -106,6 +105,49 @@ $(document).ready(function(){
 			}
 		});
 
+	</script>
+	<script>
+		jQuery(document).ready( function ($) {
+			$("#selSize").change(function(){
+				// alert ("test");
+				var idSize = $(this).val();
+				if(idSize==""){
+					return false;
+				}
+				$.ajax({
+					type: 'get',
+					url: '/get-product-price',
+					data:{idSize:idSize},
+					success:function(resp){
+						// alert(resp);
+						var arr=resp.split('#');
+						$("#getPrice").html("Price : Rs. "+arr[0]);
+						$('#price').val(arr[0]);
+					},error:function(){
+						alert("Error");
+					}
+				});
+			});
+			$("#billtoship").click(function(){
+				if(this.checked){
+					$("#shippingName").val($("#billingName").val());
+					$("#shippingAddress").val($("#billingAddress").val());
+					$("#shippingCity").val($("#billingCity").val());
+					$("#shippingState").val($("#billingState").val());
+					$("#shippingCountry").val($("#billingCountry").val());
+					$("#shippingPincode").val($("#billingPincode").val());
+					$("#shippingMobile").val($("#billingMobile").val());
+				}else{
+					$("#shippingName").val('');
+					$("#shippingAddress").val('');
+					$("#shippingCity").val('');
+					$("#shippingState").val('');
+					$("#shippingCountry").val('');
+					$("#shippingPincode").val('');
+					$("#shippingMobile").val('');
+				}
+			});
+		});
 	</script>
 </body>
 </html>
